@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="leftcolumn">
+        <div class="fakeimg">
+          <!-- <img src="https://via.placeholder.com/660x340" alt="" /> -->
+          We can add cover image here
+        </div>
+        <form [formGroup]="blogForm" (ngSubmit)="submit()">
+          <div class="card">
+            <label for="exampleFormControlTextarea1">Heading <span style="color: red;" > * </span> </label>
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Heading"
+              formControlName="heading"
+            />
+            <br />
+            <label for="exampleFormControlTextarea1">Sub Heading <span style="color: red;" > * </span></label>
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Sub - Heading"
+              formControlName="subHeading"
+            />
+            <br />
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Section 1</label>
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                placeholder="Enter your text here"
+                rows="3"
+                formControlName="section1"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Section 2</label>
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                placeholder="Enter your text here"
+                rows="3"
+                formControlName="section2"
+              ></textarea>
+            </div>
+          </div>
+          <div class="card">
+            <label for="exampleFormControlTextarea1">Section Heading</label>
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Section - Heading"
+              formControlName="sectionHeading"
+            />
+            <br />
+
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Section 3</label>
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                placeholder="Enter your text here"
+                rows="3"
+                formControlName="section3"
+              ></textarea>
+            </div>
+
+            <br>
+            <label for="exampleFormControlTextarea1"><span style="color: red;" > * </span> Mark fields are required</label>
+            
+            <div class="btn-group pt-4" aria-label="Main buttons">
+              <button type="submit" class="btn btn-primary" [disabled]="!blogForm.valid" >Submit Blog</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer" style="background-color: transparent">
+      <!-- <h2>Footer</h2> -->
+    </div>
+  </div>
+</div>

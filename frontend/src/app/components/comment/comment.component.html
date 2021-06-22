@@ -1,0 +1,13 @@
+<ng-template #commentEditModal let-modal>
+  <app-edit-comment></app-edit-comment>
+</ng-template>
+<li class="list-group-item media d-flex justify-content-md-between align-items-md-center">
+  <div class="media-body">
+    <h5 class="mt-0 mb-1">{{ comment.user | titlecase  }} | <small class="text-muted">{{ comment.date }}</small></h5>
+    <p>{{ comment.content }}</p>
+  </div>
+  <div class="btn-group" role="group" aria-label="Comment buttons">
+    <button type="button" class="btn btn-secondary" id="editBtn" (click)="editComment()">Edit</button>
+    <button type="button" class="btn btn-danger" id="deleteBtn" (click)="deleteComment()">Delete</button>
+  </div>
+</li>

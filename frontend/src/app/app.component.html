@@ -1,0 +1,8 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="text-right logout" (click) ="logout()" > <b *ngIf="user"> {{user}} |  Logout</b> </p>
+    <h1 class="display-10">Angular BLOG</h1>
+    <p class="lead">Local JSON DB ~ Blog made with Angular 12</p>
+  </div>
+</div>
+<router-outlet></router-outlet>

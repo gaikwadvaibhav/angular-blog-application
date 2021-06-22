@@ -1,0 +1,25 @@
+<div class="container">
+  <div *ngIf="isLoading" class="alert alert-warning">
+    Loading data, please wait...
+  </div>
+    <div class="card">
+      <div class="card-header">{{ comment.user | titlecase  }} | <span class="text-muted">{{ comment.date }}</span></div>
+      <div class="card-body">
+        <form [formGroup]="commentForm">
+          <label for="commentContent">Content:</label>
+          <textarea type="text" id="commentContent" formControlName="content" class="form-control" placeholder="Write here...">
+            {{ commentForm.value.content }}
+          </textarea>
+          <div class="btn-toolbar justify-content-end mt-2">
+            <div class="btn-group" aria-label="Main buttons">
+              <button class="btn btn-secondary mr-2" (click)="goBack()">Back</button>
+              <button class="btn btn-primary" [disabled]="!commentForm.valid" (click)="save()">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="isSuccess" class="alert alert-success fade show" role="alert">
+      <h4>Changes saved successfully!!</h4>
+    </div>
+</div>

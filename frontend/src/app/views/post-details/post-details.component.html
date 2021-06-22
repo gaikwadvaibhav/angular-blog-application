@@ -1,0 +1,33 @@
+<ng-template #commentAddModal let-modal>
+  <app-add-comment [post]="post"></app-add-comment>
+</ng-template>
+<div class="container">
+  <div *ngIf="isLoading" class="alert alert-warning">
+    Loading data, please wait...
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/360x140" alt="" />
+    <div class="card-header"> Author - {{ post?.author | titlecase  }} | <span class="text-muted">{{ post?.createdAt | date: 'dd/MM/yyyy' }}</span></div>
+    <div class="card-body">
+      <h5 class="card-title">{{ post?.heading }}</h5>
+      <h6 class="card-title">{{ post?.subHeading }}</h6>
+      <p class="card-text" [innerHTML]="post.section1"></p>
+      <p class="card-text" [innerHTML]="post.section2"></p>
+      <h6 class="card-title">{{ post?.sectionHeading }}</h6>
+      <p class="card-text" [innerHTML]="post.section3"></p>
+    </div>
+    <div class="card-footer">
+      <h6>Comments</h6>
+      <ul class="list-group" *ngIf="(comments.length > 0) else noComments">
+        <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+      </ul>
+      <ng-template #noComments>There are no comments.</ng-template>
+      <div class="btn-toolbar mt-2 text-right">
+        <div class="btn-group" aria-label="Main buttons">
+          <button class="btn btn-secondary"  [routerLink]="'/home'"> Back </button> &nbsp;
+          <button class="btn btn-primary" (click)="openModal(commentAddModal)"> Add Comment </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-3"></div>
+      <div class="col-md-6 login-form-1">
+        <h3 class="py-4">Reset Password </h3>
+        <form [formGroup]="resetForm" >
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your Email *"
+              value=""
+              formControlName="email"
+            />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" (click)="submit()" [disabled]="!resetForm.valid" >Send Reset Link</button>
+  
+          </div>
+          <div class="form-group">
+            <a routerLink = '/login' class="ForgetPwd"> Login </a>
+          </div>
+        </form>
+      </div> 
+      <div class="col-md-3"></div>
+  
+    </div>
+  </div>
+  

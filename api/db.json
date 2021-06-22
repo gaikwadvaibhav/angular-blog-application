@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1624363860537,
+      "author": "vaibhav gaikwad",
+      "heading": "Angular 12 Features",
+      "subHeading": "Top 10 features of angular 12",
+      "section1": "Angular v12 is now available · Moving Closer to Ivy Everywhere · Transitioning from Legacy i18n Message IDs · The Future of Protractor.",
+      "section2": "Angular is a platform for building mobile and desktop web applications. Join the community of millions of developers who build compelling user interfaces.\n\nAngular 12 has arrived with a pile of improvements to its performance, language service, compiler, form validation, and much more.",
+      "section3": "Angular v12 includes stylish improvements, nullish coalescing—allowing developers to write cleaner code in TypeScript and Angular templates",
+      "sectionHeading": "Performance:",
+      "createdAt": "2021-06-22T12:11:00.537Z"
+    }
+  ],
+  "comments": [
+    {
+      "content": "First test comment",
+      "user": "vaibhav gaikwad",
+      "date": "2021-06-22",
+      "postId": "1624363860537",
+      "id": 5
+    }
+  ]
+}

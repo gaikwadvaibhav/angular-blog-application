@@ -1,0 +1,60 @@
+<div *ngIf="isLoading" class="alert alert-warning">
+  Loading data, please wait...
+</div>
+
+<div class="container">
+  <div class="row mb-5">
+    <div class="col-md-12">
+      <div class="btn-toolbar mt-2 text-right">
+        <div class="btn-group" aria-label="Main buttons">
+          <button class="btn btn-primary" (click)="createBlog()">
+            Create Blog
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div
+      class="col-12 col-sm-8 col-md-6 col-lg-4 pb-4"
+      *ngFor="let post of posts"
+      [routerLink]="['/post/details/', post.id]"
+    >
+      <div class="card">
+        <img src="https://via.placeholder.com/660x340" alt="" />
+        <div class="card-img-overlay">
+          <a class="btn btn-light btn-sm">Technology</a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ post.heading }}</h4>
+          <small class="text-muted cat">
+            <i class="far fa-clock text-info"></i> 5 minutes
+          </small>
+          <p class="card-text">
+            {{ post.subHeading }}
+          </p>
+          <a href="#" class="btn btn-info">Read more</a>
+        </div>
+        <div
+          class="
+            card-footer
+            text-muted
+            d-flex
+            justify-content-between
+            bg-transparent
+            border-top-0
+          "
+        >
+          <div class="views">
+            <b> {{ post.author | titlecase  }} </b>
+            <span class="text-muted"></span>
+          </div>
+          <div class="stats">
+            {{ post.createdAt | date: "dd/MM/yyyy" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
